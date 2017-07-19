@@ -1,0 +1,55 @@
+[gd_scene format=1]
+
+[node name="Root" type="Node"]
+
+[node name="Boundary Walls" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Boundary Walls"]
+
+transform/pos = Vector2( -33.1489, 351.899 )
+transform/scale = Vector2( 1, 13.1598 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="RightWall" type="StaticBody2D" parent="Boundary Walls"]
+
+transform/pos = Vector2( 1312.45, 374.612 )
+transform/scale = Vector2( 1, 13.8312 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="TopWall" type="StaticBody2D" parent="Boundary Walls"]
+
+transform/pos = Vector2( 644.139, -33.1489 )
+transform/scale = Vector2( 22.1652, 1 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="BottomWall" type="StaticBody2D" parent="Boundary Walls"]
+
+transform/pos = Vector2( 636.772, 751.375 )
+transform/scale = Vector2( 22.1652, 1 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+
