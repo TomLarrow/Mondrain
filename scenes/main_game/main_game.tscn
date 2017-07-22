@@ -1,4 +1,6 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/ball/Ball.tscn" type="PackedScene" id=1]
 
 [node name="Root" type="Node"]
 
@@ -51,5 +53,9 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 392.476, 335.97 )
 
 
