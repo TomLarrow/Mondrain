@@ -1,16 +1,28 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scenes/ball/Ball.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.1838, 417.585 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 762.011, 25.6394 )
 
 [node name="Root" type="Node"]
 
 [node name="Boundary Walls" type="Node" parent="."]
 
-[node name="LeftWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="leftWall" type="StaticBody2D" parent="Boundary Walls"]
 
-transform/pos = Vector2( -33.1489, 351.899 )
-transform/scale = Vector2( 1, 13.1598 )
+transform/pos = Vector2( -26, 358 )
 input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -18,11 +30,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="RightWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/leftWall"]
 
-transform/pos = Vector2( 1312.45, 374.612 )
-transform/scale = Vector2( 1, 13.8312 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="rightWall" type="StaticBody2D" parent="Boundary Walls"]
+
+transform/pos = Vector2( 1306, 358 )
 input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -30,11 +50,20 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="TopWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/rightWall"]
 
-transform/pos = Vector2( 644.139, -33.1489 )
-transform/scale = Vector2( 22.1652, 1 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="topWall" type="StaticBody2D" parent="Boundary Walls"]
+
+editor/display_folded = true
+transform/pos = Vector2( 636.946, -25.2842 )
 input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -42,20 +71,35 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="BottomWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/topWall"]
 
-transform/pos = Vector2( 636.772, 751.375 )
-transform/scale = Vector2( 22.1652, 1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="bottomWall" type="StaticBody2D" parent="Boundary Walls"]
+
+editor/display_folded = true
+transform/pos = Vector2( 636.946, 745.716 )
 input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/bottomWall"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 392.476, 335.97 )
+transform/pos = Vector2( 137.307, 292.608 )
 
 
