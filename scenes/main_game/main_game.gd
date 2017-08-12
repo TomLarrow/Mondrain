@@ -9,5 +9,5 @@ var mouse_vertical = preload("res://scenes/main_game/mouse_vertical.png")
 
 
 func _ready():
-	Input.set_custom_mouse_cursor(mouse_horizontal)
-	
+	#Input.set_custom_mouse_cursor(mouse_horizontal)
+	pass
