@@ -62,7 +62,6 @@ _update_shape_index = 0
 
 [node name="topWall" type="StaticBody2D" parent="Boundary Walls"]
 
-editor/display_folded = true
 transform/pos = Vector2( 636.946, -25.2842 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
