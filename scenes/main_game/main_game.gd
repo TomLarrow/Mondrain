@@ -5,9 +5,7 @@ signal draw_wall
 # var a = 2
 # var b = "textvar"
 
-var mouse_horizontal = preload("res://scenes/main_game/mouse_horizontal.png")
-var mouse_vertical = preload("res://scenes/main_game/mouse_vertical.png")
-
+onready var wall = preload("res://scenes/wall/Wall.tscn")
 
 func _ready():
 	#Input.set_custom_mouse_cursor(mouse_horizontal)
@@ -16,3 +14,7 @@ func _ready():
 
 func _on_draw_wall(direction, wall_origin):
 	print("I'm drawing a wall to direction ", direction, " from ", wall_origin)
+	var w = wall.instance()
+	w.set_global_pos(wall_origin)
+	w.set_rotd(360 - (90 * direction))
+	add_child(w)
