@@ -12,28 +12,28 @@ script/script = ExtResource( 1 )
 enabled = true
 cast_to = Vector2( 0, 5000 )
 layer_mask = 1
-type_mask = 13
+type_mask = 15
 
 [node name="ray_up" type="RayCast2D" parent="."]
 
 enabled = true
 cast_to = Vector2( 0, -5000 )
 layer_mask = 1
-type_mask = 13
+type_mask = 15
 
 [node name="ray_left" type="RayCast2D" parent="."]
 
 enabled = true
 cast_to = Vector2( -5000, 0 )
 layer_mask = 1
-type_mask = 13
+type_mask = 15
 
 [node name="ray_right" type="RayCast2D" parent="."]
 
 enabled = true
 cast_to = Vector2( 5000, 0 )
 layer_mask = 1
-type_mask = 13
+type_mask = 15
 
 [node name="Sprite" type="Sprite" parent="."]
 
