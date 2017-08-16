@@ -1,11 +1,10 @@
 extends KinematicBody2D
 
-onready var effect = get_node("Tween")
+onready var tween = get_node("Tween")
 
 func _ready():
-	effect.interpolate_property(self, "transform/scale", self.get_scale(), Vector2(1.0, 25.0), 1.5, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	effect.start()
+	tween.interpolate_property(self, "transform/scale", self.get_scale(), Vector2(1.0, 60.0), 3.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	tween.start()
 
-func _on_effect_tween_complete( object, key ):
+func _on_Tween_tween_complete( object, key ):
 	print(is_colliding())
- 
