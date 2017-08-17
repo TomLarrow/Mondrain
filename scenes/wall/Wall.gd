@@ -8,3 +8,8 @@ func _ready():
 
 func _on_Tween_tween_complete( object, key ):
 	print(is_colliding())
+
+
+func _on_Area2D_body_enter_shape( body_id, body, body_shape, area_shape ):
+	print (body_id, body, body_shape, area_shape)
+	pass # replace with function body
