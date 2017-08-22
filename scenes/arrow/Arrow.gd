@@ -14,11 +14,12 @@ func _fixed_process(delta):
 	direction = find_shortest_ray()
 	sprite.set_rotd( 360 - (90 * direction)) # since we want the arrow to point AWAY from the ray, reverse the rotation
 
+
 func _input(event):
 	# if user left clicks
 	if(event.type == InputEvent.MOUSE_BUTTON):
 		if(event.button_index == 1):
-			emit_signal("draw_wall", direction, rays[direction].get_collision_point())
+			emit_signal("draw_wall", direction, rays[direction].get_collision_point(), rays[clamp(direction+2,0,3)].get_collision_point().distance_to(rays[direction].get_collision_point()) )
 
 func find_shortest_ray():
 	var smallest = 100000.0

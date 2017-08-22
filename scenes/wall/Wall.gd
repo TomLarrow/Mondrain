@@ -1,15 +1,20 @@
 extends KinematicBody2D
+signal wall_complete
 
 onready var tween = get_node("Tween")
+onready var area2d = get_node("Area2D")
+onready var ray = get_node("RayCast2D")
+var distance
+
+func init(passed_in_instance):
+	distance = passed_in_instance
 
 func _ready():
-	tween.interpolate_property(self, "transform/scale", self.get_scale(), Vector2(1.0, 60.0), 3.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	tween.interpolate_property(self, "transform/scale", Vector2(1,0) , Vector2(1, distance/23.5), distance/200, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
 
 func _on_Tween_tween_complete( object, key ):
-	print(is_colliding())
+	emit_signal("wall_complete")
+	print("done")
 
 
-func _on_Area2D_body_enter_shape( body_id, body, body_shape, area_shape ):
-	print (body_id, body, body_shape, area_shape)
-	pass # replace with function body
