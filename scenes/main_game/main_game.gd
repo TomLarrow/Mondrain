@@ -27,3 +27,4 @@ func _on_draw_wall(direction, wall_origin, distance):
 
 func _on_wall_complete():
 	can_draw = true
+	

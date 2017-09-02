@@ -2,8 +2,8 @@ extends KinematicBody2D
 signal wall_complete
 
 onready var tween = get_node("Tween")
-#onready var area2d = get_node("Area2D")
-#onready var ray = get_node("RayCast2D")
+onready var collision_shape = get_node("CollisionShape2D")
+
 var distance
 
 func init(passed_in_instance):
@@ -15,6 +15,7 @@ func _ready():
 
 func _on_Tween_tween_complete( object, key ):
 	emit_signal("wall_complete")
+	collision_shape.set_trigger(false)
 	print("done")
 
 
