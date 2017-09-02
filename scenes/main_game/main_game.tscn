@@ -109,4 +109,12 @@ transform/pos = Vector2( 137.307, 292.608 )
 
 transform/pos = Vector2( 377, 482 )
 
+[node name="Ball 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 887.104, 310.026 )
+
+[node name="Ball 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 755.869, 603.253 )
+
 

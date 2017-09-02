@@ -61,6 +61,14 @@ shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
 
+[node name="area_finder_1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -12.25, 12 )
+
+[node name="area_finder_2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 12.25, 12 )
+
 [connection signal="tween_complete" from="Tween" to="." method="_on_Tween_tween_complete"]
 
 [connection signal="body_enter" from="ball_detect" to="." method="_on_ball_detect_body_enter"]

@@ -2,12 +2,9 @@ extends Node
 signal draw_wall
 signal wall_complete
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 onready var wall = preload("res://scenes/wall/Wall.tscn")
-var can_draw
+onready var area_finder = preload("res://scenes/area_finder/area_finder.tscn")
+onready var can_draw = true
 
 func _ready():
 	#set metadata for all the walls
@@ -18,7 +15,6 @@ func _ready():
 	
 	#Input.set_custom_mouse_cursor(mouse_horizontal)
 	find_node("Arrow").connect("draw_wall", self, "_on_draw_wall")
-	can_draw=true
 
 func _on_draw_wall(direction, wall_origin, distance):
 	if can_draw:
@@ -31,9 +27,17 @@ func _on_draw_wall(direction, wall_origin, distance):
 		add_child(w)
 		can_draw = false
 
-func _on_wall_complete(successful):
+func _on_wall_complete(successful, position_1, position_2):
 	can_draw = true
-	if !successful:
+	if successful:
+		attach_area_finder(position_1)
+		attach_area_finder(position_2)
+	else:
 		#TODO The scoring and lives go here
 		pass
-	
+
+func attach_area_finder(area):
+	var a = area_finder.instance()
+	a.set_global_pos(area)
+	add_child(a)
+	pass
