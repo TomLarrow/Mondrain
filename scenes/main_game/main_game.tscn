@@ -20,7 +20,7 @@ script/script = ExtResource( 1 )
 
 [node name="Boundary Walls" type="Node" parent="."]
 
-[node name="leftWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="left_wall" type="StaticBody2D" parent="Boundary Walls"]
 
 transform/pos = Vector2( -26, 358 )
 input/pickable = false
@@ -34,13 +34,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/leftWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/left_wall"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="rightWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="right_wall" type="StaticBody2D" parent="Boundary Walls"]
 
 transform/pos = Vector2( 1306, 358 )
 input/pickable = false
@@ -54,13 +54,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/rightWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/right_wall"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="topWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="top_wall" type="StaticBody2D" parent="Boundary Walls"]
 
 transform/pos = Vector2( 636.946, -25.2842 )
 input/pickable = false
@@ -74,13 +74,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/topWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/top_wall"]
 
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="bottomWall" type="StaticBody2D" parent="Boundary Walls"]
+[node name="bottom_wall" type="StaticBody2D" parent="Boundary Walls"]
 
 editor/display_folded = true
 transform/pos = Vector2( 636.946, 745.716 )
@@ -95,13 +95,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/bottomWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Walls/bottom_wall"]
 
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+[node name="Ball" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 137.307, 292.608 )
 

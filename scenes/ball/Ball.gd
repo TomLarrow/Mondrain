@@ -8,6 +8,7 @@ func _ready():
 	randomize()
 	vel = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized() * speed 
 	print(vel)
+	self.set_meta("type", "ball")
 	set_fixed_process(true)
 
 func _fixed_process(delta):
