@@ -19,7 +19,7 @@ func _ready():
 	tween.start()
 
 func _on_Tween_tween_complete( object, key ):
-	emit_signal("wall_complete", true, area_finder_1.get_pos(), area_finder_2.get_pos())
+	emit_signal("wall_complete", true, area_finder_1.get_global_pos(), area_finder_2.get_global_pos())
 	collision_shape.set_trigger(false)
 	tweening = false
 	print("done")
